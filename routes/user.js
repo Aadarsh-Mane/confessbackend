@@ -10,6 +10,6 @@ userRoute.patch('/update/:username',updateUser)
 userRoute.patch('/delete/:username',deleteUser)
 userRoute.post('/login',loginUser)
 userRoute.get('/:username',checkToken, getUserByUsername)
-userRoute.post('/checkusername/:username',checkUserName)
+userRoute.get('/checkusername/:username',checkUserName)
 
 export default userRoute
