@@ -4,6 +4,8 @@ import User from "../models/usersModel.js";
 import cors from "cors";
 
 import express from "express";
+const app = express();
+
 const userRoute=express.Router();
 app.use(cors());
 
