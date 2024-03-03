@@ -1,9 +1,11 @@
 import { checkUserName, deleteUser, getUserByUsername, loginUser, register, updateUser } from "../controllers/register.js";
 import { checkToken } from "../middleware.js";
 import User from "../models/usersModel.js";
+import cors from "cors";
 
 import express from "express";
 const userRoute=express.Router();
+app.use(cors());
 
 userRoute.post('/register',register)
 userRoute.patch('/update/:username',updateUser)
