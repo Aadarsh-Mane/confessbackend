@@ -116,4 +116,24 @@ export const register = async (req, res) => {
             res.status(500).json({ message: "Internal server error" });
         }
     };
+export const checkUserName=async(req, res) =>{
+    const username = req.params.username;
     
+        try {
+            // Find the user by username
+            const user = await User.findOne({ username });
+    
+            // If user doesn't exist, return an error
+            if (!user) {
+                return res.status(404).json({ status: false });
+            }
+    
+            // Respond with user details
+            res.status(200).json({ status: true });
+        } catch (error) {
+            // Handle errors
+            console.error("Error fetching user:", error);
+            res.status(500).json({ message: "Internal server error" });
+        }
+
+}
